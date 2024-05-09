@@ -1,9 +1,5 @@
 import tkinter as tk
 
-
-
-
-
 app = tk.Tk()
 app.title("Journal - Note Management System")
 screen_width = app.winfo_screenwidth()
@@ -61,7 +57,7 @@ frame4 = tk.Frame(frame2, borderwidth=2, relief="sunken", height = window_height
 frame4.pack(side="top", fill="x", padx=0, pady=0)  # Fill both directions and expand
 frame4.pack_propagate(False)  # Prevent the frame from resizing to fit its contents
 
-frame6 = tk.Frame(frame2, borderwidth=2, relief="sunken", height = window_height // 1.2, bg='blue')
+frame6 = tk.Frame(frame2, borderwidth=2, relief="sunken", height = window_height // 1.2, bg='grey')
 # frame2.place(x=430, y=0)  # Position at (150, 100) within the main window
 frame6.pack(side="top", fill="x", padx=0, pady=0)  # Fill both directions and expand
 frame6.pack_propagate(False)  # Prevent the frame from resizing to fit its contents
@@ -83,19 +79,21 @@ text_area2.bind("<Key>", ignore_input)
 '''
 button1 = tk.Button(frame3, text="Start")
 button1.pack(side="left", padx=10)
-'''
-button2 = tk.Button(frame3, text="End", command=lambda: kill_process_by_name('lily_window.exe'))
-button2.pack(side="right", padx=10)
-'''
+buttonx = tk.Button(frame3, text="End", command=lambda: kill_process_by_name('lily_window.exe'))
+buttonx.pack(side="right", padx=10)
 button3 = tk.Button(frame2, text="Start", command=write_text)
 button3.pack(side="left", padx=10)
 button4 = tk.Button(frame2, text="End")
 button4.pack(side="right", padx=10)
 '''
 
+button1 = tk.Button(frame6, text="New", command=lambda: kill_process_by_name('lily_window.exe'))
+button1.pack(side="left", padx=10)
+
+button2 = tk.Button(frame6, text="Save", command=lambda: kill_process_by_name('lily_window.exe'))
+button2.pack(side="right", padx=10)
+
 # frame2.pack_forget()
 app.bind("<Control-k>", show_area)
-
-
 
 app.mainloop()
